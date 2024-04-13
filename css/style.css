@@ -1,0 +1,556 @@
+:root {
+    --black: #000000;
+    --blue: #14213D;
+    --yellow: #FCA311;
+    --grey: #E5E5E5;
+    --white: #ffffff; 
+  }
+
+* {
+    font-family: "montserrat", "sans-serif";
+}
+
+body {
+    font-size: 16px;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+    font-size: 22px;
+}
+
+footer {
+    background: var(--black);
+    color: var(--white);
+    padding: 10px 0px;
+    font-size: 12px;
+}
+
+.skip_to_main_content {
+    left: -999px;
+    position: absolute;
+}
+
+.skip_to_main_content:focus {
+    font-size:24px;
+    position: fixed;
+    left: 10px;
+    background: var(--black);
+    color: var(--white);
+}
+
+/* Navigation/menu and active links */
+
+nav ul {
+    list-style-type: none;
+    border-bottom: 4px solid var(--black);
+}
+
+nav ul li {
+    padding: 20px 0px;
+}
+
+nav ul li a:hover {
+    font-weight: 800;
+    border-bottom: 2px solid var(--black);
+}
+
+.active-page {
+    font-weight: 800;
+    border-bottom: 2px solid var(--black);
+}
+
+/* Header img */
+
+.header-pic {
+    display: none;
+}
+
+/* Headings */
+
+h1 {
+    padding-top: 24px;
+    padding-bottom: 16px;
+    font-size: 48px;
+    font-weight: 800;
+}
+
+h2 {
+    padding: 20px 0px;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 32px;
+    font-weight: 800;
+}
+
+h4 {
+    font-size: 20px;
+    font-weight: 800;
+    padding: 5px 0px;
+}
+
+/* Main bar */
+
+.main-bar {
+    display: flex;
+    flex-wrap: wrap; /* Automatically begin new row on website */
+    justify-content: space-evenly;
+    background: var(--yellow);
+    border-bottom: 4px solid var(--black);
+}
+
+.main-bar li {
+    font-weight: 800;
+    padding: 40px 20px;
+    font-size: 24px;
+}
+
+/* Main content */
+
+.container, .gallery {
+    padding-bottom: 20px;
+}
+
+.container > p {
+    padding: 0px 20px;
+}
+
+.container:nth-child(even) {
+    background: var(--yellow);
+}
+
+.container:nth-child(even) > .detail {
+    background: var(--black);
+    color: var(--white);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 25px;
+}
+
+.container:nth-child(odd) > .detail {
+    border: 4px solid var(--yellow);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 25px;
+}
+
+.btn-look {
+    display: block;
+    padding: 15px 10px;
+    margin: 20px auto 0px auto;
+    border-radius: 25px;
+    width: 40%;
+    border: 4px solid var(--black);
+    text-align: center;
+}
+
+.btn-look:hover {
+    transform: scale(1.05);
+    font-weight: 800;
+}
+
+/* Projects */
+.detail > img {
+    display: none;
+}
+
+.detail > div > h3 {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.detail > div > p {
+    text-align: left;
+}
+
+.long-text-hidden {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+}
+
+/* Technologies */
+.gallery > a > img {
+    width: 220px;
+    padding: 40px 20px;
+    flex-wrap: wrap;
+    transition: transform .1s;
+}
+
+.gallery > a > img:hover {
+    transform: scale(1.25);
+}
+
+/* Reviews */
+.review-gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.review:nth-child(n+4) {
+    display: none;
+}
+
+.review > a > img {
+    width: 140px;
+    border-radius: 50%;
+    padding-bottom: 10px;
+    transition: transform .1s;
+}
+
+.review > a > img:hover {
+    transform: scale(1.1);
+}
+
+.reviewer-name {
+    font-weight: 800;
+}
+
+.reviewer-company {
+    font-size: 14px;
+}
+
+.reviewer-text {
+    display: none;
+}
+
+/**** Projects page ****/
+
+.gallery-projects {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.gallery-projects > a > img {
+    width: 150px;
+    padding: 20px;
+    filter: grayscale(100%);
+    transition: transform .1s;
+}
+
+.gallery-projects > a > img:hover {
+    transform: scale(1.1);
+}
+
+.sql-filtering {
+    display: none;
+}
+
+.button {
+    border: 4px solid var(--black);
+    padding: 15px 40px;
+    border-radius: 25px;
+    margin: 0px 5px 20px 5px;
+}
+
+.button:hover {
+    cursor: pointer;
+    background: var(--black);
+    color: var(--white);
+}
+
+.button:active {
+    cursor: pointer;
+    background: var(--grey);
+    color: var(--black);
+}
+
+.project-length {
+    font-weight: bold;
+}
+
+.project-detail-layout {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+#no-projects-msg {
+    display: none;
+    font-weight: 800;
+}
+
+/**** Reviews ****/
+.review-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-detail > img {
+    width: 200px;
+    margin: 0 auto;
+    padding: 20px 0px;
+    border-radius: 50%;
+}
+
+.review-detail > div > p {
+    padding: 0px 40px;
+    margin: 0 auto;
+}
+
+.review-detail > div > span {
+    padding-top: 20px;
+}
+
+.review-detail:nth-child(odd) > div > .checked {
+    color: var(--yellow);
+}
+
+.review-detail:nth-child(even) > div > .checked {
+    color: var(--white);
+}
+
+/* Scroll up button */
+#scroll-up {
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    background: var(--white);
+    color: var(--yellow);
+    cursor: pointer;
+    padding: 20px;
+    border-top: 1px solid var(--black);
+    border-left: 1px solid var(--black);
+    font-size: 24px;
+    font-weight: 800;
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
+
+/* Footer container */
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0px;
+}
+
+.footer-container > div > p,a {
+    text-align: left;
+    font-size: 18px;
+}
+
+.footer-container > div > a {
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+.footer-container > div > a:hover {
+    color: var(--white);
+}
+
+/* Media query */
+
+@media (min-width: 800px) {
+
+    /* Nav */
+    nav ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* Header */
+
+    .header-pic {
+        display: flex;
+        background-image: url("../images/dark-lines-gif.gif");
+        background-size:cover;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-pic > h1 {
+        color: var(--white);
+    }
+
+    /* Projects */
+
+    .detail {
+        display: flex;
+    }
+
+    .detail:nth-child(odd) {
+        flex-direction: row;
+    }
+
+    .detail:nth-child(odd) {
+        flex-direction: row-reverse;
+    }
+
+    .detail > img {
+        display: flex;
+        padding: 20px;
+    }
+
+    .review:nth-child(n)  {
+        display: block;
+    }
+
+    .long-text-hidden {
+        -webkit-line-clamp: 12;
+    }
+
+    /*** PROJECT PAGE ***/
+    .sql-filtering {
+        display: none;
+    }  
+
+    /**** Technologies page ****/
+
+    .technology-logo {
+        width: 325px;
+    }
+
+    /* Buttons */
+
+    .btn-look {
+        width: 300px;
+    }
+
+    /**** Reviews page ****/
+
+    .review > a > img {
+        width: 125px;
+    }
+
+    .review-detail > img {
+        padding-top: 20px;
+        width: 250px;
+    }
+    
+    .review-detail:nth-child(odd) > img {
+        padding-left: 20px;
+    }
+
+    .review-detail:nth-child(even) > img {
+        padding-right: 20px;
+    }
+
+    .review-detail > div > h3 {
+        padding-top: 20px;
+    } 
+
+    .review-detail > div > h3 {
+        padding-top: 20px;
+    } 
+
+}
+
+@media (min-width: 1200px) {
+    .intro > p {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .header-pic {
+        height: 500px;
+    }
+
+    .detail > div > p {
+        margin: 20px 40px 0px 40px;
+    }
+
+    .reviewer-text  {
+        display: block;
+        padding: 10px 10px 0px 10px;
+    }
+
+    /* Projects page */
+    .gallery-projects {
+        display: block;
+        padding: 35px 0;
+    }
+
+    .gallery-projects > a > img {
+        width: 200px;
+    }
+
+    .sql-filtering {
+        background-color: var(--grey);
+        display: block;
+    }
+    
+    .sql-filtering > p {
+        width: 30%;
+        margin: 0 auto;
+        font-size: 24px;
+        padding: 20px 0;
+        text-align: left;
+    }
+    
+    #user-input {
+        background: var(--white);
+        margin-left: 10px;
+        width: 40px;
+        text-align: center;
+    }
+
+    .technology-logo {
+        width: 350px;
+    }
+
+    /**** Reviews page ****/
+    .review-detail:nth-child(odd) {
+        flex-direction: row;
+    }
+
+    .review-detail:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .review-detail > img {
+        padding-top: 20px;
+        width: 375px;
+    }
+    .review > a > img {
+        width: 250px;
+    }
+
+    .review-detail {
+        margin: 0 auto;
+    }
+
+}
+
+
+/* Printing */
+
+@media print {
+    img,
+    .detail >img,
+    nav,
+    .btn-look {
+        display: none;
+    }
+
+    .header-pic {
+        display: flex;
+        background-image: none;
+        height: 150px;
+        justify-content: center;
+    }
+
+    .header-pic > h1 {
+        color: var(--black);
+    }
+
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion) {
+    .header-pic {
+        background-image: url("../images/dark-lines.avif");
+    }
+  }
