@@ -530,7 +530,8 @@ h4 {
     img,
     .detail >img,
     nav,
-    .btn-look {
+    .btn-look,
+    .sql-filtering {
         display: none;
     }
 
